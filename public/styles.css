@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+.container {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.hamburger {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.hamburger span {
+    width: 24px;
+    height: 3px;
+    background: white;
+    border-radius: 999px;
+}
+.hamburger:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 4px;
+}
+.hamburger:hover {
+    background: rgba(0, 0, 0, 0.35);
+    transform: translateY(-1px);
+}
+.menu-panel {
+    position: absolute;
+    top: 20px;
+    left: 90px;
+    padding: 1rem 1.5rem;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.menu-panel.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+.menu-panel h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+.menu-panel button {
+    padding: 0.75rem 1.25rem;
+    border-radius: 999px;
+    border: none;
+    background: #38b2ac;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(56, 178, 172, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.menu-panel button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(56, 178, 172, 0.55);
+}
