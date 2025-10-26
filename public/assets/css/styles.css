@@ -1,166 +1,186 @@
+html,
 body {
-    font-family: Arial, sans-serif;
+    height: 100%;
+}
+
+body {
     margin: 0;
-    height: auto;
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fefefe;
+}
+
+a {
+    color: inherit;
+}
+
+.container {
+    width: min(90%, 520px);
+    margin: 0 auto;
+    padding: 5% 6%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 6%;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0.7rem 2rem rgba(14, 20, 40, 0.35);
+}
+
+.container h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.04em;
 }
 
 .landing-body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    justify-content: center;
+    padding: 8% 5% 10%;
+    gap: 3%;
 }
-.container {
-    text-align: center;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-h1 {
-    font-size: 3rem;
-    margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
+
 .hamburger {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 50px;
-    height: 50px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    background: rgba(0, 0, 0, 0.2);
-    color: white;
+    position: fixed;
+    top: 3%;
+    left: 2%;
+    width: clamp(44px, 9vw, 64px);
+    height: clamp(44px, 9vw, 64px);
+    border-radius: 30%;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(0, 0, 0, 0.25);
+    color: #fff;
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 6px;
-    transition: background 0.3s ease, transform 0.2s ease;
+    justify-content: center;
+    gap: 15%;
+    transition: transform 0.2s ease, background 0.2s ease;
+    z-index: 10;
 }
+
 .hamburger span {
-    width: 24px;
-    height: 3px;
-    background: white;
-    border-radius: 999px;
+    width: 50%;
+    height: 8%;
+    border-radius: 990px;
+    background: currentColor;
 }
+
+.hamburger:hover,
 .hamburger:focus-visible {
-    outline: 2px solid #fff;
-    outline-offset: 4px;
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-8%);
+    outline: none;
 }
-.hamburger:hover {
-    background: rgba(0, 0, 0, 0.35);
-    transform: translateY(-1px);
-}
+
 .menu-panel {
-    position: absolute;
-    top: 20px;
-    left: 90px;
-    padding: 1rem 1.5rem;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 14px;
+    position: fixed;
+    top: 3%;
+    left: 8%;
+    padding: 3% 4%;
+    background: rgba(15, 18, 45, 0.8);
+    border-radius: 5%;
     border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 1.5rem 3rem rgba(10, 10, 30, 0.45);
     opacity: 0;
+    transform: translate(-10%, 0);
     pointer-events: none;
-    transform: translateX(-10px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
+
 .menu-panel.open {
     opacity: 1;
+    transform: translate(0, 0);
     pointer-events: auto;
-    transform: translateX(0);
 }
+
 .menu-panel h2 {
-    margin: 0 0 0.75rem;
-    font-size: 1rem;
-    letter-spacing: 0.05em;
+    margin-top: 0;
+    font-size: 0.95rem;
     text-transform: uppercase;
+    letter-spacing: 0.2em;
 }
-.menu-panel button {
-    padding: 0.75rem 1.25rem;
+
+.button-link {
+    display: inline-block;
+    margin: 0.3rem 0;
+    padding: 0.7rem 1.3rem;
     border-radius: 999px;
-    border: none;
-    background: #38b2ac;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgba(56, 178, 172, 0.4);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.menu-panel button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 10px 24px rgba(56, 178, 172, 0.55);
+    background: rgba(255, 255, 255, 0.18);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
-/* Reset landing assumptions for this route */
-.tits-page-body{
-    display: block;
+.button-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-5%);
+}
+
+/* Detail page layout */
+.tits-page-body {
+    padding: 7% 6% 8%;
     box-sizing: border-box;
-    min-height: unset;
-    height: auto;
-    padding: 40px 5% 5%;
 }
 
-.tits-page-body .container{
-    width: min(90%, 600px);
-    margin: 0 auto 3%;
-    padding: 2% 3%;
+.tits-page-body .container {
+    margin-bottom: 3%;
 }
 
-.tits-page-body img{
+.tits-page-body img {
     display: block;
-    width: min(85%, 500px);
-    height: auto;
-    border-radius: 2%;
-    box-shadow: 0 2vh 4vh rgba(0,0,0,.3);
-    margin: 32px auto;
+    width: min(88%, 520px);
+    margin: 3% auto 4%;
+    border-radius: 5%;
+    box-shadow: 0 1rem 2.4rem rgba(10, 12, 30, 0.35);
 }
 
-.biopic{
-    width: min(90%, 800px);
+.biopic {
+    width: min(92%, 820px);
     margin: 0 auto;
-    background: rgba(255,255,255,.1);
-    padding: 3% 4%;
-    border-radius: 2%;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 1.5vh 3vh rgba(0,0,0,.1);
+    padding: 5% 6%;
+    border-radius: 5%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0.8rem 2rem rgba(9, 8, 20, 0.25);
     text-align: left;
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    .tits-page-body {
-        padding: 5% 4%;
-    }
-    
-    .tits-page-body .container,
-    .biopic {
-        width: 95%;
-    }
-    
-    .tits-page-body img {
-        width: 90%;
-    }
-}
-.tits-page-body,
-.boobies-page-body {
-  min-height: auto !important;
-  height: auto !important;
-  overflow-x: hidden;
-  overflow-y: auto;
-  display: block;
-  margin: 0;
-  padding: 40px 5% 5%;
-  box-sizing: border-box;
+.biopic h2 {
+    margin-top: 0;
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+    color: #ffe58f;
 }
 
-html, body {
-  scroll-behavior: auto;
-  overflow-x: hidden;
+.biopic h3 {
+    margin-top: 2.5%;
+    font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+    color: #ffe58f;
+    border-bottom: 1px solid rgba(255, 229, 143, 0.4);
+    padding-bottom: 1%;
+}
+
+.biopic p {
+    margin: 1.5% 0;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+@media (max-width: 640px) {
+    .landing-body {
+        padding-top: 18%;
+    }
+
+    .hamburger {
+        left: 6%;
+    }
+
+    .menu-panel {
+        left: 12%;
+        width: 75%;
+    }
 }
