@@ -96,10 +96,10 @@ h1 {
 
 /* Tits page specific styles */
 .tits-page-body {
-    flex-direction: column;
-    align-items: center;
-    padding: 3% 5%;
-    min-height: 100vh;
+    display: block;
+    padding: 4% 5% 5%;
+    min-height: auto;
+    height: auto;
 }
 
 .tits-page-body .container {
