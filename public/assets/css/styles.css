@@ -1,12 +1,16 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.landing-body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    min-height: 100vh;
 }
 .container {
     text-align: center;
@@ -96,7 +100,7 @@ h1 {
 
 /* Tits page specific styles */
 .tits-page-body {
-    display: block;
+    display: auto;
     padding: 4% 5% 5%;
     min-height: auto;
     height: auto;
