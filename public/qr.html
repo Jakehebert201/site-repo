@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Codes</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <style>
+        .qr-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.8rem;
+            margin-top: 1.5rem;
+        }
+        .qr-card {
+            text-align: center;
+        }
+        .qr-card img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 320px;
+        }
+        @media (max-width: 480px) {
+            .qr-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body class="tits-page-body">
     <header class="detail-header">
