@@ -195,6 +195,29 @@ a {
     color: rgba(255, 255, 255, 0.95);
 }
 
+.qr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.8rem;
+    margin-top: 1.5rem;
+}
+
+.qr-card {
+    text-align: center;
+    padding: 1.2rem 1rem;
+    border-radius: 1rem;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0.7rem 1.6rem rgba(10, 12, 30, 0.25);
+}
+
+.qr-card img {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 0.6rem;
+    box-shadow: 0 0.6rem 1.4rem rgba(0, 0, 0, 0.25);
+}
+
 @media (max-width: 640px) {
     .landing-body {
         padding-top: 18%;
