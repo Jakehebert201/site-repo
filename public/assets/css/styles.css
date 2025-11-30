@@ -197,7 +197,7 @@ a {
 
 .qr-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.8rem;
     margin-top: 1.5rem;
 }
@@ -219,6 +219,10 @@ a {
 }
 
 @media (max-width: 640px) {
+    .qr-grid {
+        grid-template-columns: 1fr;
+    }
+
     .landing-body {
         padding-top: 18%;
     }
